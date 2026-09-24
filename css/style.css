@@ -966,7 +966,6 @@ button {
   background: var(--surface);
 }
 
-/* EDIT EVENT DETAILS HERE — one cell per item. */
 .glance__cell {
   padding: clamp(20px, 2.5vw, 30px);
   border-right: 1px solid var(--border-subtle);
@@ -1269,7 +1268,6 @@ button {
   align-items: start;
 }
 
-/* EDIT CONTACT DETAILS HERE — one row per channel. */
 .channels {
   border: 1px solid var(--border-subtle);
   background: var(--surface);

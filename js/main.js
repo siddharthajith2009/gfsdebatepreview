@@ -166,12 +166,6 @@
         return;
       }
 
-      /*
-        BACKEND HOOK
-        Send the form data to your endpoint here, e.g.
-        fetch("/api/contact", { method: "POST", body: new FormData(form) })
-      */
-
       Array.prototype.forEach.call(form.children, function (child) {
         if (!child.hasAttribute("data-form-success")) child.style.display = "none";
       });
