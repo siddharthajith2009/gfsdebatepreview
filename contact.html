@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — GFS Legacy Debates</title>
+  <meta name="description" content="Start a conversation with GFS Legacy Debates — enquiries about participation, collaboration, sponsorship, or event information." />
+
+  <meta property="og:title" content="Contact — GFS Legacy Debates" />
+  <meta property="og:description" content="Start a conversation with the team behind GEMS Founders School's flagship debate event." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gfslegacydebates.example.com/contact.html" />
+  <meta property="og:image" content="assets/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="contact">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="intro" data-intro aria-hidden="true">
+    <div class="intro-inner">
+      <div class="intro-logo-mask">
+        <img src="assets/logo.svg" alt="" width="96" height="96" />
+      </div>
+      <div class="intro-rule"></div>
+      <p class="intro-word" data-intro-word>GFS Legacy Debates</p>
+      <p class="intro-tag">Hosted by GEMS Founders School</p>
+    </div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="GFS Legacy Debates — home">
+        <img class="brand-mark" src="assets/logo.svg" alt="GFS Legacy Debates emblem" width="44" height="44" />
+        <span class="brand-word">
+          <span class="brand-name">GFS Legacy Debates</span>
+          <span class="brand-sub">GEMS Founders School</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="about.html">About</a></li>
+          <li><a class="nav-link" href="team.html">Core Team</a></li>
+          <li><a class="nav-link is-active" href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+        <span class="menu-toggle-label" aria-hidden="true">Menu</span>
+        <span class="menu-toggle-lines" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-label="Mobile" hidden>
+    <ul>
+      <li><a class="mobile-menu-link" href="index.html"><span class="idx">01</span>Home</a></li>
+      <li><a class="mobile-menu-link" href="about.html"><span class="idx">02</span>About</a></li>
+      <li><a class="mobile-menu-link" href="team.html"><span class="idx">03</span>Core Team</a></li>
+      <li><a class="mobile-menu-link is-active" href="contact.html" aria-current="page"><span class="idx">04</span>Contact</a></li>
+    </ul>
+    <p class="mobile-menu-meta">GFS Legacy Debates — GEMS Founders School</p>
+  </nav>
+
+  <main id="main">
+
+    <!-- ================= PAGE HERO ================= -->
+    <section class="page-hero" aria-labelledby="contact-heading">
+      <div class="page-hero-ghost" aria-hidden="true">Hello</div>
+      <div class="hairlines" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="container">
+        <p class="kicker" data-hero="kicker">Contact</p>
+        <h1 id="contact-heading" data-hero="h1">Start a <em style="color: var(--gold);">Conversation</em></h1>
+        <p class="lede muted" data-hero="lede">
+          Debaters open with a question. So do we — what can we help you with?
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="on-paper section-pad" aria-label="Contact details and form">
+      <div class="hairlines" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="container contact-grid">
+
+        <div class="contact-aside">
+          <p class="kicker" data-reveal>Reach Us</p>
+
+          <!-- EDIT CONTACT DETAILS HERE -->
+          <dl class="channels" data-reveal="none">
+            <div class="channel" data-reveal>
+              <dt>Email</dt>
+              <dd><a href="mailto:legacydebates@gemsfs.example.com">legacydebates@gemsfs.example.com</a></dd>
+            </div>
+            <div class="channel" data-reveal>
+              <dt>Instagram</dt>
+              <dd><a href="https://instagram.com/gfslegacydebates" rel="noopener" target="_blank">@gfslegacydebates</a></dd>
+            </div>
+            <div class="channel" data-reveal>
+              <dt>School</dt>
+              <dd>GEMS Founders School</dd>
+            </div>
+            <div class="channel" data-reveal>
+              <dt>Location</dt>
+              <dd>Al Barsha South, Dubai, UAE</dd>
+            </div>
+          </dl>
+
+          <p class="contact-note" data-reveal>
+            We welcome enquiries regarding participation, collaboration,
+            sponsorship, and general event information. A member of the core
+            team replies to every message — usually within a few school days.
+          </p>
+        </div>
+
+        <!--
+          CONTACT FORM
+          No backend is connected yet. Submission is validated client-side and
+          shows a success state. To connect a backend, handle the submit event
+          in js/main.js (see initContactForm) or point the action attribute at
+          your endpoint.
+        -->
+        <form class="contact-form" data-contact-form action="#" method="post" novalidate>
+
+          <div class="field">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Your full name" required />
+            <span class="field-rule" aria-hidden="true"></span>
+            <span class="field-error" id="cf-name-error" role="status">Please tell us your name.</span>
+          </div>
+
+          <div class="field">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="you@school.com" required />
+            <span class="field-rule" aria-hidden="true"></span>
+            <span class="field-error" id="cf-email-error" role="status">Please enter a valid email address.</span>
+          </div>
+
+          <div class="field">
+            <label for="cf-school">School</label>
+            <input type="text" id="cf-school" name="school" autocomplete="organization" placeholder="Your school or organisation" />
+            <span class="field-rule" aria-hidden="true"></span>
+          </div>
+
+          <div class="field">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="subject" placeholder="Participation, sponsorship…" required />
+            <span class="field-rule" aria-hidden="true"></span>
+            <span class="field-error" id="cf-subject-error" role="status">Please add a short subject.</span>
+          </div>
+
+          <div class="field field--full">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" placeholder="Make your case…" required></textarea>
+            <span class="field-rule" aria-hidden="true"></span>
+            <span class="field-error" id="cf-message-error" role="status">Every good case needs a message.</span>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn" type="submit">
+              <span class="btn-label">Send Message</span>
+              <span class="btn-arrow" aria-hidden="true"></span>
+            </button>
+            <span class="form-hint">We read everything. Rebuttals included.</span>
+          </div>
+
+          <div class="form-success" data-form-success hidden tabindex="-1">
+            <svg class="success-mark" viewBox="0 0 52 52" aria-hidden="true">
+              <circle data-success-circle cx="26" cy="26" r="24" />
+              <path data-success-check d="M15 27l8 8 15 -17" />
+            </svg>
+            <h3>Point well made.</h3>
+            <p>Your message has been noted. A member of the core team will respond soon.</p>
+          </div>
+
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.svg" alt="GFS Legacy Debates emblem" width="46" height="46" loading="lazy" />
+          <span class="footer-name">GFS Legacy Debates</span>
+          <p class="footer-line">Arguments fade. Ideas leave a legacy.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Core Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Connect</h3>
+          <ul>
+            <li><a href="https://instagram.com/gfslegacydebates" rel="noopener" target="_blank">Instagram</a></li>
+            <li><a href="mailto:legacydebates@gemsfs.example.com">Email</a></li>
+            <li><a href="contact.html">Sponsorship</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>&copy; <span data-year>2026</span> GFS Legacy Debates. All rights reserved.</span>
+        <span class="host">Hosted by GEMS Founders School</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/vendor/anime.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</body>
+</html>

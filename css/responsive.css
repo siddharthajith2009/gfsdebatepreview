@@ -1,0 +1,211 @@
+/* ==========================================================================
+   GFS LEGACY DEBATES — Responsive layout
+   Desktop-first overrides. Breakpoints: 64rem (tablet), 46rem (mobile).
+   ========================================================================== */
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 64rem) {
+  :root {
+    --header-h: 4.25rem;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .hero-under {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .hero-tagline {
+    max-width: 24ch;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+
+  .editorial-grid,
+  .president-grid,
+  .facts-grid,
+  .chapter-grid,
+  .coordinator-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .president-portrait,
+  .coordinator-portrait {
+    max-width: 22rem;
+  }
+
+  .chapter-marker {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+  }
+
+  .chapter-num {
+    font-size: clamp(3.5rem, 9vw, 5rem);
+  }
+
+  .chapter-label {
+    margin-top: 0;
+  }
+
+  .pillar-row {
+    grid-template-columns: 3.5rem minmax(0, 1fr) 2.5rem;
+  }
+
+  .pillar-desc {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    margin-top: 0.4rem;
+  }
+
+  .pillar-cue {
+    grid-row: 1;
+    grid-column: 3;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 46rem) {
+  :root {
+    --section-y: clamp(3.5rem, 14vw, 5rem);
+  }
+
+  .brand-word {
+    display: none;
+  }
+
+  .menu-toggle-label {
+    display: none;
+  }
+
+  .hero {
+    min-height: 94svh;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 16.5vw, 4.8rem);
+  }
+
+  .hero-ghost {
+    font-size: clamp(7rem, 42vw, 12rem);
+    top: 36%;
+  }
+
+  .hero-fragments span:nth-child(3),
+  .hero-fragments span:nth-child(4) {
+    display: none;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .page-hero-ghost {
+    font-size: clamp(5rem, 30vw, 8rem);
+  }
+
+  .section-title {
+    font-size: var(--step-3);
+  }
+
+  .hairlines i:nth-child(1),
+  .hairlines i:nth-child(3) {
+    display: none;
+  }
+
+  .president-portrait::before {
+    inset: 0.7rem -0.7rem -0.7rem 0.7rem;
+  }
+
+  .coordinator-portrait::after {
+    inset: -0.7rem 0.7rem 0.7rem -0.7rem;
+  }
+
+  .president-message blockquote {
+    font-size: var(--step-1);
+  }
+
+  .president-sig {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+
+  .pillar-num {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+  .pillar-name {
+    font-size: var(--step-2);
+  }
+
+  .fact {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .team-grid,
+  .team-grid--lead {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr));
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+    gap: 2.1rem;
+  }
+
+  .channel {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-base {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .believe-list li {
+    grid-template-columns: 2.25rem 1fr;
+    gap: 0.9rem;
+  }
+}
+
+/* Very small screens */
+
+@media (max-width: 22.5rem) {
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .mobile-menu-link {
+    font-size: 1.9rem;
+  }
+}
