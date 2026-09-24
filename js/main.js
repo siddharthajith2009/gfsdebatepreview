@@ -138,63 +138,6 @@
     });
   }
 
-  /* ---------- Custom cursor (fine pointers only) ---------- */
-
-  function initCursor() {
-    var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    if (!fine || prefersReducedMotion) return;
-
-    var dot = document.createElement("div");
-    var ring = document.createElement("div");
-    dot.className = "cursor-dot";
-    ring.className = "cursor-ring";
-    dot.setAttribute("aria-hidden", "true");
-    ring.setAttribute("aria-hidden", "true");
-    document.body.appendChild(dot);
-    document.body.appendChild(ring);
-    document.body.classList.add("has-cursor");
-
-    var x = -100, y = -100;
-    var ringX = -100, ringY = -100;
-    var ringScale = 1;
-    var visible = false;
-
-    document.addEventListener("mousemove", function (e) {
-      x = e.clientX;
-      y = e.clientY;
-      if (!visible) {
-        visible = true;
-        dot.style.opacity = "1";
-        ring.style.opacity = "1";
-      }
-    }, { passive: true });
-
-    document.addEventListener("mouseleave", function () {
-      visible = false;
-      dot.style.opacity = "0";
-      ring.style.opacity = "0";
-    });
-
-    function loop() {
-      // Ring trails the dot slightly for a soft, weighted feel.
-      ringX += (x - ringX) * 0.16;
-      ringY += (y - ringY) * 0.16;
-      ringScale += ((ring.classList.contains("is-hover") ? 1.7 : 1) - ringScale) * 0.2;
-      dot.style.transform = "translate(" + (x - 2.5) + "px," + (y - 2.5) + "px)";
-      ring.style.transform = "translate(" + (ringX - 17) + "px," + (ringY - 17) + "px) scale(" + ringScale.toFixed(3) + ")";
-      window.requestAnimationFrame(loop);
-    }
-    window.requestAnimationFrame(loop);
-
-    var hoverables = "a, button, input, textarea, [data-cursor]";
-    document.addEventListener("mouseover", function (e) {
-      if (e.target.closest(hoverables)) ring.classList.add("is-hover");
-    });
-    document.addEventListener("mouseout", function (e) {
-      if (e.target.closest(hoverables)) ring.classList.remove("is-hover");
-    });
-  }
-
   /* ---------- Contact form ---------- */
 
   function initContactForm() {
@@ -291,7 +234,6 @@
   document.addEventListener("DOMContentLoaded", function () {
     initHeader();
     initMobileMenu();
-    initCursor();
     initContactForm();
     initYear();
   });

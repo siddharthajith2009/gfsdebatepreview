@@ -83,35 +83,37 @@
       targets: ".hero-title .line > span",
       opacity: [0, 1],
       translateY: ["105%", "0%"],
-      duration: 1100,
-      delay: window.anime.stagger(140)
+      duration: 1000,
+      delay: window.anime.stagger(130)
     }, delayBase + 200);
 
     tl.add({
       targets: ".hero-tagline",
       opacity: [0, 1],
-      translateY: [24, 0],
-      duration: 800
-    }, delayBase + 700);
+      translateY: [22, 0],
+      duration: 750
+    }, delayBase + 650);
 
     tl.add({
       targets: ".hero-aside",
       opacity: [0, 1],
-      translateY: [24, 0],
-      duration: 800
-    }, delayBase + 850);
+      translateY: [22, 0],
+      duration: 750
+    }, delayBase + 800);
 
     tl.add({
-      targets: ".hero-scroll",
+      targets: ".hero-crest",
       opacity: [0, 1],
-      duration: 600,
-      easing: "linear"
-    }, delayBase + 1100);
+      translateY: [26, 0],
+      duration: 900
+    }, delayBase + 500);
 
-    window.setTimeout(function () {
-      var under = document.querySelector(".hero-under");
-      if (under) under.classList.add("hero-under-ready");
-    }, delayBase + 650);
+    tl.add({
+      targets: ".marquee",
+      opacity: [0, 1],
+      duration: 700,
+      easing: "linear"
+    }, delayBase + 1000);
   }
 
   function enterInnerPage(delayBase) {
@@ -172,45 +174,38 @@
     tl.add({
       targets: ".intro-logo-mask img",
       opacity: [0, 1],
-      translateY: [30, 0],
-      scale: [0.92, 1],
-      duration: 850
+      translateY: [26, 0],
+      scale: [0.82, 1],
+      duration: 750
     });
-
-    tl.add({
-      targets: ".intro-rule",
-      scaleX: [0, 1],
-      duration: 700,
-      easing: "easeInOutQuart"
-    }, "-=350");
 
     tl.add({
       targets: letters,
       opacity: [0, 1],
-      translateY: ["0.55em", "0em"],
-      duration: 550,
-      delay: window.anime.stagger(26)
+      translateY: ["0.5em", "0em"],
+      duration: 500,
+      delay: window.anime.stagger(22)
     }, "-=300");
 
     tl.add({
       targets: ".intro-tag",
       opacity: [0, 1],
-      duration: 450,
+      duration: 400,
       easing: "linear"
-    }, "-=250");
+    }, "-=220");
 
-    // Hold, then wipe the overlay upward into the page.
+    // Hold briefly, then wipe the overlay upward into the page.
     tl.add({
       targets: intro,
       translateY: ["0%", "-100%"],
-      duration: 750,
+      duration: 700,
       easing: "easeInOutQuint"
-    }, "+=420");
+    }, "+=380");
 
     // Start the page entrance as the overlay lifts.
     window.setTimeout(function () {
       enterPage(0);
-    }, tl.duration - 520);
+    }, tl.duration - 480);
   }
 
   function skipIntro() {
@@ -323,28 +318,6 @@
     maskTargets.forEach(function (el) { maskIO.observe(el); });
   }
 
-  /* ---------- Subtle parallax on the hero ghost word ---------- */
-
-  function initParallax() {
-    var el = document.querySelector("[data-parallax]");
-    if (!el) return;
-
-    var ticking = false;
-
-    function update() {
-      var y = window.scrollY;
-      el.style.transform = "translate(-50%, calc(-50% + " + (y * 0.18) + "px))";
-      ticking = false;
-    }
-
-    window.addEventListener("scroll", function () {
-      if (!ticking) {
-        ticking = true;
-        window.requestAnimationFrame(update);
-      }
-    }, { passive: true });
-  }
-
   /* ---------- Page transitions (fade out before navigating) ---------- */
 
   function initPageTransitions() {
@@ -386,7 +359,6 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initReveals();
-    initParallax();
     initPageTransitions();
 
     if (intro && !introAlreadyPlayed()) {

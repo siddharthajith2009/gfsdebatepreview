@@ -5,43 +5,28 @@
    added by animations.js only when scripting and full motion are available.
    ========================================================================== */
 
-@keyframes scroll-pulse {
-  0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
-  35%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
-  70%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
-  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
 }
-
-@keyframes drift {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-14px); }
-}
-
-.hero-fragments span {
-  animation: drift 9s ease-in-out infinite;
-}
-
-.hero-fragments span:nth-child(2) { animation-delay: -3s; }
-.hero-fragments span:nth-child(3) { animation-delay: -6s; }
-.hero-fragments span:nth-child(4) { animation-delay: -1.5s; }
 
 /* ---------- Scroll-reveal initial states (motion-enabled only) ---------- */
 
 .js-motion [data-reveal] {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(26px);
   will-change: opacity, transform;
 }
 
-.js-motion [data-reveal="left"]  { transform: translateX(-32px); }
-.js-motion [data-reveal="right"] { transform: translateX(32px); }
+.js-motion [data-reveal="left"]  { transform: translateX(-30px); }
+.js-motion [data-reveal="right"] { transform: translateX(30px); }
 .js-motion [data-reveal="none"]  { transform: none; }
 
 .js-motion [data-reveal].is-revealed {
   will-change: auto;
 }
 
-/* Rules / hairlines that grow when revealed */
+/* Rules / lines that grow when revealed */
 
 .js-motion [data-grow] {
   transform: scaleX(0);
@@ -65,14 +50,10 @@
   position: absolute;
   inset: 0;
   z-index: 3;
-  background: var(--ink);
+  background: var(--bg);
   transform: scaleY(1);
   transform-origin: top center;
   pointer-events: none;
-}
-
-.on-paper .reveal-mask .mask-veil {
-  background: var(--paper);
 }
 
 html:not(.js-motion) .reveal-mask .mask-veil {
@@ -85,21 +66,13 @@ html:not(.js-motion) .reveal-mask .mask-veil {
 .js-motion .hero-school,
 .js-motion .hero-tagline,
 .js-motion .hero-aside,
-.js-motion .hero-scroll {
+.js-motion .hero-crest,
+.js-motion .marquee {
   opacity: 0;
 }
 
 .js-motion .hero-title .line > span {
   transform: translateY(105%);
-}
-
-.js-motion .hero-under {
-  border-top-color: transparent;
-}
-
-.js-motion .hero-under.hero-under-ready {
-  border-top-color: var(--line-dark);
-  transition: border-top-color 0.8s ease;
 }
 
 .js-motion .site-header .header-inner {
@@ -129,12 +102,7 @@ html:not(.js-motion) .reveal-mask .mask-veil {
     transition-duration: 0.01ms !important;
   }
 
-  .hero-fragments span {
+  .marquee-track {
     animation: none;
-  }
-
-  .hero-scroll::after {
-    animation: none;
-    transform: none;
   }
 }
