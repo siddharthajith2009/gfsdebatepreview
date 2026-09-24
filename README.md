@@ -1,13 +1,15 @@
 # GFS Legacy Debates
 
-The official website for **GFS Legacy Debates** — the student-run debate event
-of GEMS Founders School, Dubai.
+The official website for **GFS Legacy Debates** — the flagship debate event of
+GEMS Founders School, Dubai.
 
-> arguments fade. ideas stick around.
+> Arguments fade. Ideas leave a legacy.
 
 A fully static, dependency-light site built with semantic HTML5, modern CSS,
-vanilla JavaScript, and [Anime.js](https://animejs.com/) for the startup
-sequence, scroll reveals, and micro-interactions.
+vanilla JavaScript, and a light touch of [Anime.js](https://animejs.com/) for
+the hero entrance, mobile menu, and form success state. The design is quiet
+and editorial: near-black surfaces, hairline borders, condensed uppercase
+display type, and the crest red as the single accent.
 
 ## Running locally
 
@@ -23,25 +25,22 @@ npx serve -l 41730
 
 Then open <http://localhost:41730>.
 
-> Opening the HTML files directly from disk (`file://`) also works, but a
-> local server is recommended so fonts and session behaviour match production.
-
 ## Project structure
 
 ```
-index.html        Home (hero, introduction, president's message, pillars, event info)
+index.html        Home (hero, about, pillars, president's letter, event info)
 about.html        About (chapters 01–04, philosophy, closing statement)
 team.html         Core Team (Debate Coordinator feature + student leadership)
 contact.html      Contact (channels + validated contact form)
 
 css/
   style.css       Design tokens, layout, and all components
-  animations.css  Animation initial states, ambient motion, reduced-motion rules
+  animations.css  Reveal states and reduced-motion rules
   responsive.css  Tablet and mobile overrides
 
 js/
-  main.js         Header, mobile menu, contact form, misc
-  animations.js   Anime.js choreography: intro, entrances, scroll reveals
+  main.js         Nav state, scroll progress, mobile menu, contact form
+  animations.js   Hero entrance + IntersectionObserver scroll reveals
   vendor/         Vendored anime.min.js (v3.2.2)
 
 assets/
@@ -54,32 +53,37 @@ assets/
 Everything editable is plain HTML with `<!-- EDIT -->` comments nearby:
 
 - **Logo** — the official crest lives at `assets/logo.png`; replace that file
-  to update it everywhere (header, footer, hero, and intro overlay).
-- **Event details** — the `<dl class="facts">` block in `index.html`
+  to update it everywhere (nav, hero, about panel, footer).
+- **Event details** — the `glance` grid in `index.html`
   (date, venue, registration status, eligibility).
-- **President's message** — the `blockquote`, name, and signature in the
-  “Message from the President” section of `index.html`.
+- **President's letter** — the `letter` block in `index.html`: portrait,
+  badge name/role, quote, message, and signature.
+- **Debate Coordinator** — the featured `letter` block at the top of
+  `team.html`.
 - **Team members** — each person on `team.html` is one
-  `<article class="member">` block; duplicate a block to add someone and point
-  its `<img>` at a photo in `assets/images/`.
-- **Contact details** — the `<dl class="channels">` block in `contact.html`,
-  plus the footer links on every page.
+  `<article class="team-card">` block; duplicate a block to add someone and
+  point its `<img>` at a photo in `assets/images/`.
+- **Contact details** — the `channels` list in `contact.html`, plus the
+  footer links on every page.
 - **Contact form backend** — the form is validated client-side only; connect
   a backend inside `initContactForm()` in `js/main.js` (marked `BACKEND HOOK`).
 
 ## Design system
 
-- **Palette** — sampled from the crest: off-white `#f4f2ec`, navy ink
-  `#10182b` / `#1e3a70`, crest red `#ae2d26` used sparingly; all tokens live
-  as CSS variables at the top of `css/style.css`.
-- **Type** — [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)
-  for headings, [Inter](https://fonts.google.com/specimen/Inter) for body copy,
-  and [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono) for the
-  small casual labels (loaded from Google Fonts).
-- **Motion** — the intro plays once per browser session
-  (`sessionStorage`), scroll reveals are IntersectionObserver-driven, and all
-  motion is disabled for visitors with `prefers-reduced-motion` set — content
-  is fully visible without JavaScript.
+- **Palette** — near-black with a faint navy cast (`#090b10`, `#10131a`),
+  warm off-white text (`#f2f1ed`), hairline white borders, and the crest red
+  (`#c4463d`) as the only accent. All tokens live as CSS variables at the top
+  of `css/style.css`.
+- **Type** — [Oswald](https://fonts.google.com/specimen/Oswald) (condensed,
+  uppercase) for display headings, [Manrope](https://fonts.google.com/specimen/Manrope)
+  for body copy and labels (loaded from Google Fonts).
+- **Surfaces** — boxy throughout: zero border radius, 1px borders, flat
+  panels. A barely-visible film grain adds texture.
+- **Motion** — deliberately restrained: a soft hero stagger on load, 12px
+  scroll reveals driven by IntersectionObserver + CSS transitions, a scroll
+  progress bar, and small hover states. All motion is disabled for visitors
+  with `prefers-reduced-motion` set, and content is fully visible without
+  JavaScript.
 
 ## Accessibility
 

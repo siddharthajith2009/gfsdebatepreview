@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GFS Legacy Debates — arguments fade. ideas stick around.</title>
-  <meta name="description" content="GFS Legacy Debates is the student-run debate event of GEMS Founders School, Dubai. One event, a lot of opinions, all of them challenged." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <title>GFS Legacy Debates — GEMS Founders School</title>
+  <meta name="description" content="GFS Legacy Debates is the flagship debate event of GEMS Founders School, Dubai — a student-led stage for arguments that outlast their speakers." />
+  <meta name="theme-color" content="#090b10" />
 
   <!-- Open Graph placeholders: update url/image before launch -->
-  <meta property="og:title" content="GFS Legacy Debates" />
-  <meta property="og:description" content="arguments fade. ideas stick around. The student-run debate event of GEMS Founders School, Dubai." />
+  <meta property="og:title" content="GFS Legacy Debates | GEMS Founders School" />
+  <meta property="og:description" content="Arguments fade. Ideas leave a legacy. The flagship debate event of GEMS Founders School, Dubai." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gfslegacydebates.example.com/" />
   <meta property="og:image" content="assets/logo.png" />
@@ -17,7 +19,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animations.css" />
@@ -25,317 +27,323 @@
 </head>
 <body data-page="home">
 
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- Startup animation overlay (plays once per session) -->
-  <div class="intro" data-intro aria-hidden="true">
-    <div class="intro-inner">
-      <div class="intro-logo-mask">
-        <img src="assets/logo.png" alt="" width="170" height="201" />
+  <!-- Scroll progress -->
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar" data-scroll-progress></div></div>
+
+  <!-- ================================
+       GLOBAL NAVIGATION
+       ================================ -->
+  <header>
+    <nav class="nav" data-nav aria-label="Primary">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="GFS Legacy Debates, Home">
+          <img class="nav__logo-mark" src="assets/logo.png" alt="GFS Legacy Debates crest" width="38" height="45" />
+          <span class="nav__logo-text">
+            <span class="nav__logo-title">Legacy Debates</span>
+            <span class="nav__logo-sub">GEMS Founders School</span>
+          </span>
+        </a>
+
+        <div class="nav__links">
+          <a href="index.html" class="nav__link nav__link--active" aria-current="page">Home</a>
+          <a href="about.html" class="nav__link">About</a>
+          <a href="team.html" class="nav__link">Core Team</a>
+          <a href="contact.html" class="nav__link">Contact</a>
+        </div>
+
+        <a href="contact.html" class="btn btn--primary btn--small nav__cta">Register</a>
+
+        <button class="nav__toggle" data-menu-toggle type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="nav__toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
       </div>
-      <p class="intro-word" data-intro-word>GFS Legacy Debates</p>
-      <p class="intro-tag">gems founders school, dubai</p>
-    </div>
-  </div>
+    </nav>
 
-  <header class="site-header" data-header>
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="GFS Legacy Debates — home">
-        <img class="brand-mark" src="assets/logo.png" alt="GFS Legacy Debates crest" width="42" height="50" />
-        <span class="brand-word">
-          <span class="brand-name">GFS Legacy Debates</span>
-          <span class="brand-sub">gems founders school</span>
-        </span>
-      </a>
-
-      <nav class="site-nav" aria-label="Primary">
-        <ul>
-          <li><a class="nav-link is-active" href="index.html" aria-current="page">Home</a></li>
-          <li><a class="nav-link" href="about.html">About</a></li>
-          <li><a class="nav-link" href="team.html">Core Team</a></li>
-          <li><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
-        <span class="menu-toggle-label" aria-hidden="true">menu</span>
-        <span class="menu-toggle-lines" aria-hidden="true"><span></span><span></span></span>
-      </button>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" data-mobile-menu hidden>
+      <div class="mobile-menu__backdrop" data-close-menu></div>
+      <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <nav class="mobile-menu__nav" aria-label="Mobile">
+          <a href="index.html" class="mobile-menu__link mobile-menu__link--active" aria-current="page">Home</a>
+          <a href="about.html" class="mobile-menu__link">About</a>
+          <a href="team.html" class="mobile-menu__link">Core Team</a>
+          <a href="contact.html" class="mobile-menu__link">Contact</a>
+        </nav>
+        <p class="mobile-menu__meta">GFS Legacy Debates<br />GEMS Founders School, Dubai</p>
+      </div>
     </div>
   </header>
 
-  <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-label="Mobile" hidden>
-    <ul>
-      <li><a class="mobile-menu-link is-active" href="index.html" aria-current="page"><span class="idx">01</span>Home</a></li>
-      <li><a class="mobile-menu-link" href="about.html"><span class="idx">02</span>About</a></li>
-      <li><a class="mobile-menu-link" href="team.html"><span class="idx">03</span>Core Team</a></li>
-      <li><a class="mobile-menu-link" href="contact.html"><span class="idx">04</span>Contact</a></li>
-    </ul>
-    <p class="mobile-menu-meta">gfs legacy debates — gems founders school, dubai</p>
-  </nav>
-
   <main id="main">
 
-    <!-- ================= HERO ================= -->
-    <section class="hero" aria-label="Introduction">
-      <div class="container hero-content">
-        <div>
-          <p class="hero-school" data-hero="school">
-            <span class="dot">●</span> gems founders school, dubai — student-run
-          </p>
+    <!-- ================================
+         HERO
+         ================================ -->
+    <section class="hero" aria-label="GFS Legacy Debates">
+      <div class="hero__overlay" aria-hidden="true"></div>
 
-          <h1 class="hero-title" data-hero="title">
-            <span class="line"><span>GFS Legacy</span></span>
-            <span class="line"><span><span class="accent">Debates</span><span class="full-stop">.</span></span></span>
-          </h1>
-
-          <p class="hero-tagline" data-hero="tagline">
-            arguments fade. ideas stick around.
-          </p>
-
-          <div class="hero-aside" data-hero="aside">
-            <p>
-              A debate event run by students who take ideas seriously — and
-              themselves slightly less so. Come argue with us.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn--solid" href="about.html">
-                <span class="btn-label">see what it's about</span>
-                <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-              </a>
-              <a class="btn" href="team.html">
-                <span class="btn-label">meet the team</span>
-                <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-crest" data-hero="crest">
-          <img src="assets/logo.png" alt="The GFS Legacy Debates crest" width="340" height="402" />
-          <span class="crest-tag">( the crest — treat it nicely )</span>
-        </div>
-      </div>
-
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <span>speak</span><span>challenge</span><span>defend</span><span>leave something behind</span>
-          <span>speak</span><span>challenge</span><span>defend</span><span>leave something behind</span>
-        </div>
-        <div class="marquee-track">
-          <span>speak</span><span>challenge</span><span>defend</span><span>leave something behind</span>
-          <span>speak</span><span>challenge</span><span>defend</span><span>leave something behind</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= THE GIST ================= -->
-    <section class="section-pad" aria-labelledby="gist-heading">
-      <div class="container gist-grid">
-        <div>
-          <p class="kicker" data-reveal>( the gist )</p>
-          <h2 class="sr-only" id="gist-heading">What GFS Legacy Debates is</h2>
-        </div>
-        <div class="gist-copy">
-          <p class="big-line" data-reveal>
-            Basically: a room where good ideas get
-            <span class="accent">taken apart</span>, defended, and occasionally
-            <span class="accent-red">change someone's mind</span>.
-          </p>
-          <p class="support" data-reveal>
-            Legacy Debates is the student-run debate event of GEMS Founders
-            School. No trophies-first culture, no rehearsed theatre — just
-            motions worth losing sleep over, judges who reward substance, and an
-            audience that actually came to be persuaded.
-          </p>
-          <p data-reveal><a class="text-link" href="about.html">the full story &rarr;</a></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= MESSAGE FROM THE PRESIDENT ================= -->
-    <section class="president section-pad" aria-labelledby="president-heading">
-      <div class="container president-grid">
-
-        <figure class="president-portrait" data-reveal="left">
-          <div class="frame reveal-mask">
-            <span class="mask-veil" aria-hidden="true"></span>
-            <!-- Replace with the President's portrait: assets/images/president.jpg -->
-            <img src="assets/images/portrait-placeholder.svg" alt="Portrait of the President of GFS Legacy Debates" loading="lazy" width="600" height="760" />
-          </div>
-          <figcaption>( president, gfs legacy debates )</figcaption>
-        </figure>
-
-        <div class="president-message">
-          <p class="kicker" data-reveal>( a word from the president )</p>
-          <h2 class="sr-only" id="president-heading">Message from the President</h2>
-
-          <blockquote data-reveal>
-            <p>
-              Every speaker eventually sits down. We care about what's still
-              standing when they do.
-            </p>
-            <p>
-              <!-- EDIT: replace with the President's real message -->
-              We started Legacy Debates because school debates can be more than
-              an exchange of rehearsed lines. This event is for the speaker who
-              changes their mind mid-prep, the rebuttal that reframes a whole
-              round, and the audience member who leaves quietly rethinking
-              something. Come as a competitor, a judge or a guest — either way,
-              you'll be part of an argument that outlasts all of us. Make your
-              minutes count.
-            </p>
-          </blockquote>
-
-          <div class="president-sig" data-reveal>
-            <span class="dash" aria-hidden="true">—</span>
-            <p class="who">
-              <strong>Aariz Placeholder</strong><span>, president</span> <!-- EDIT: President's name -->
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= PILLARS ================= -->
-    <section class="section-pad" aria-labelledby="pillars-heading">
-      <div class="container">
-        <div class="pillars-head">
-          <div>
-            <p class="kicker" data-reveal>( the experience )</p>
-            <h2 class="section-title" id="pillars-heading" data-reveal>What a round asks of you</h2>
-          </div>
-          <p class="muted" data-reveal style="max-width: 32ch;">
-            Four things, every round. The last one is the point.
-          </p>
-        </div>
-
-        <div class="pillars" role="list">
-          <div class="pillar" role="listitem" data-reveal="none">
-            <div class="pillar-row">
-              <span class="pillar-num" aria-hidden="true">/01</span>
-              <h3 class="pillar-name">Speak</h3>
-              <p class="pillar-desc">Hold the floor. Build a case that stands on its own logic — clarity beats volume, every time.</p>
-              <span class="pillar-cue" aria-hidden="true">&rarr;</span>
-            </div>
-          </div>
-          <div class="pillar" role="listitem" data-reveal="none">
-            <div class="pillar-row">
-              <span class="pillar-num" aria-hidden="true">/02</span>
-              <h3 class="pillar-name">Challenge</h3>
-              <p class="pillar-desc">Find the weakest beam in the strongest argument. Question the premise everyone else skipped past.</p>
-              <span class="pillar-cue" aria-hidden="true">&rarr;</span>
-            </div>
-          </div>
-          <div class="pillar" role="listitem" data-reveal="none">
-            <div class="pillar-row">
-              <span class="pillar-num" aria-hidden="true">/03</span>
-              <h3 class="pillar-name">Defend</h3>
-              <p class="pillar-desc">Hold your ground without holding it blindly. Concede the point that deserves it — and no other.</p>
-              <span class="pillar-cue" aria-hidden="true">&rarr;</span>
-            </div>
-          </div>
-          <div class="pillar" role="listitem" data-reveal="none">
-            <div class="pillar-row">
-              <span class="pillar-num" aria-hidden="true">/04</span>
-              <h3 class="pillar-name">Leave something behind</h3>
-              <p class="pillar-desc">The round ends. The idea doesn't have to. Say something that's still in the room after you leave it.</p>
-              <span class="pillar-cue" aria-hidden="true">&rarr;</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= EVENT DETAILS ================= -->
-    <section class="section-pad" style="padding-top: 0;" aria-labelledby="details-heading">
-      <div class="container facts-grid">
-        <div class="facts-aside">
-          <p class="kicker" data-reveal>( the details )</p>
-          <h2 class="section-title" id="details-heading" data-reveal>The practical bit</h2>
-          <p class="lede muted" data-reveal>
-            Everything below gets confirmed closer to the event. Hold us to it.
-          </p>
-          <p data-reveal>
-            <a class="btn btn--solid" href="contact.html">
-              <span class="btn-label">register interest</span>
-              <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-            </a>
-          </p>
-        </div>
-
-        <!-- EDIT EVENT DETAILS HERE: change the <dd> values below -->
-        <dl class="facts" data-reveal="none">
-          <div class="fact">
-            <dt>date</dt>
-            <dd>To be announced<small>season 2026 — exact date confirmed soon</small></dd>
-          </div>
-          <div class="fact">
-            <dt>venue</dt>
-            <dd>GEMS Founders School<small>Al Barsha South, Dubai, UAE</small></dd>
-          </div>
-          <div class="fact">
-            <dt>registration</dt>
-            <dd>Opening soon<small>announcements via Instagram and email</small></dd>
-          </div>
-          <div class="fact">
-            <dt>eligibility</dt>
-            <dd>Secondary school students<small>individual speakers and school delegations welcome</small></dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- ================= CLOSING ================= -->
-    <section class="closing section-pad" aria-label="Closing statement">
-      <div class="container">
-        <p class="kicker" data-reveal>( one more thing )</p>
-        <p class="statement" data-reveal>
-          Come say something <span class="accent">worth</span>
-          <span class="accent-red">remembering</span>.
+      <div class="hero__content">
+        <img class="hero__crest" src="assets/logo.png" alt="" width="170" height="201" data-hero />
+        <p class="hero__eyebrow" data-hero><span class="dot" aria-hidden="true"></span>GEMS Founders School, Dubai</p>
+        <h1 class="hero__title" data-hero>GFS <span class="thin">Legacy</span> Debates</h1>
+        <p class="hero__sub" data-hero>
+          Arguments fade. Ideas leave a legacy. The flagship debate event of
+          GEMS Founders School — built by students, for speakers.
         </p>
-        <a class="btn" href="contact.html" data-reveal>
-          <span class="btn-label">start a conversation</span>
-          <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+        <div class="hero__actions" data-hero>
+          <a class="btn btn--primary" href="about.html">
+            <span>Explore the event</span>
+            <svg class="btn__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
+          </a>
+          <a class="btn btn--secondary" href="team.html">Meet the team</a>
+        </div>
+      </div>
+
+      <p class="hero__scroll" data-hero aria-hidden="true">Scroll</p>
+    </section>
+
+    <!-- ================================
+         ABOUT
+         ================================ -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="grid-2">
+          <div class="reveal">
+            <p class="eyebrow">About the event</p>
+            <h2 id="about-heading" class="about__heading" style="margin-top: 16px;">
+              A stage for ideas that <em>outlast</em> their speakers.
+            </h2>
+            <div class="about__copy">
+              <p>
+                <strong>GFS Legacy Debates</strong> is the flagship debate event of
+                <strong>GEMS Founders School, Dubai</strong> — a student-led forum where
+                rigorous argument meets genuine respect for the other side. It brings
+                together speakers from across the Emirates to contest the questions
+                that deserve contesting.
+              </p>
+              <p>
+                More than a competition, Legacy Debates is an exercise in clarity,
+                preparation and nerve. Speakers research, build, defend and concede —
+                learning to listen as carefully as they speak, and to hold their
+                ground without holding it blindly.
+              </p>
+              <p>
+                Whether you are stepping up to your first motion or returning as a
+                seasoned finalist, the event offers the same thing: a serious stage,
+                honest adjudication, and an audience that came to be persuaded.
+              </p>
+            </div>
+          </div>
+
+          <div class="about__media reveal">
+            <!-- Swap this panel for an event photograph when available:
+                 <img src="assets/images/about.jpg" alt="..." class="img-cover"> -->
+            <img src="assets/logo.png" alt="The GFS Legacy Debates crest" width="340" height="402" loading="lazy" />
+            <span class="about__media-tag">Est. GEMS Founders School</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         WHAT A ROUND ASKS OF YOU
+         ================================ -->
+    <section class="section section--alt" aria-labelledby="pillars-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="eyebrow">The experience</p>
+          <h2 id="pillars-heading">What a round asks of you</h2>
+        </div>
+
+        <div role="list">
+          <div class="pillar reveal" role="listitem">
+            <div class="pillar__row">
+              <span class="pillar__num" aria-hidden="true">01</span>
+              <h3 class="pillar__name">Speak</h3>
+              <p class="pillar__desc">Hold the floor. Build a case that stands on its own logic — clarity carries further than volume.</p>
+            </div>
+          </div>
+          <div class="pillar reveal" role="listitem">
+            <div class="pillar__row">
+              <span class="pillar__num" aria-hidden="true">02</span>
+              <h3 class="pillar__name">Challenge</h3>
+              <p class="pillar__desc">Find the weakest beam in the strongest argument. Question the premise everyone else accepted.</p>
+            </div>
+          </div>
+          <div class="pillar reveal" role="listitem">
+            <div class="pillar__row">
+              <span class="pillar__num" aria-hidden="true">03</span>
+              <h3 class="pillar__name">Defend</h3>
+              <p class="pillar__desc">Stand your ground under pressure. Concede the point that deserves conceding — and no other.</p>
+            </div>
+          </div>
+          <div class="pillar reveal" role="listitem">
+            <div class="pillar__row">
+              <span class="pillar__num" aria-hidden="true">04</span>
+              <h3 class="pillar__name">Leave a legacy</h3>
+              <p class="pillar__desc">The round ends; the idea doesn't have to. Say something that stays in the room after you leave it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         MESSAGE FROM THE PRESIDENT
+         ================================ -->
+    <section class="section" id="letter" aria-labelledby="letter-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="eyebrow">From the President</p>
+          <h2 id="letter-heading">The argument begins<br />before you arrive.</h2>
+        </div>
+
+        <div class="letter reveal">
+          <div class="letter__portrait">
+            <!-- Replace with the President's portrait: assets/images/president.jpg -->
+            <img src="assets/images/portrait-placeholder.svg" alt="Portrait of the President of GFS Legacy Debates" width="600" height="760" loading="lazy" />
+            <div class="letter__portrait-badge">
+              <div class="letter__portrait-name">Aariz Placeholder</div> <!-- EDIT: President's name -->
+              <div class="letter__portrait-role">President, GFS Legacy Debates</div>
+            </div>
+          </div>
+
+          <div class="letter__body">
+            <span class="letter__quote-mark" aria-hidden="true">&ldquo;</span>
+            <blockquote class="letter__quote">
+              Every speaker in this event will eventually sit down. What we care
+              about is what remains standing when they do.
+            </blockquote>
+            <div class="letter__text">
+              <!-- EDIT: replace with the President's real message -->
+              <p>
+                Legacy Debates was built on a simple conviction — that a school
+                debate can be more than an exchange of rehearsed lines. This event
+                is for the speaker who changes their mind mid-preparation, for the
+                rebuttal that reframes an entire round, and for the audience member
+                who leaves quietly rethinking something they were certain about
+                that morning.
+              </p>
+              <p>
+                Whether you arrive as a competitor, an adjudicator or a guest, you
+                will be part of an argument that started before us and will
+                continue long after. We ask only one thing: come prepared to
+                listen. Make your minutes count.
+              </p>
+            </div>
+            <div class="letter__signature">
+              <span class="letter__signature-line" aria-hidden="true"></span>
+              <div>
+                <div class="letter__signature-name">Aariz Placeholder</div> <!-- EDIT: President's name -->
+                <div class="letter__signature-meta">President, GFS Legacy Debates</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         AT A GLANCE — EVENT DETAILS
+         ================================ -->
+    <section class="section section--tight section--alt" aria-labelledby="glance-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="eyebrow">At a glance</p>
+          <h2 id="glance-heading">Event information</h2>
+          <p>Details are confirmed closer to the event. Everything below is easy to update — and easy to hold us to.</p>
+        </div>
+
+        <!-- EDIT EVENT DETAILS HERE: change the values below -->
+        <div class="glance reveal-group reveal" role="list">
+          <div class="glance__cell" role="listitem">
+            <p class="glance__label">Date</p>
+            <p class="glance__value">To be announced</p>
+            <p class="glance__note">Season 2026 — exact date confirmed soon.</p>
+          </div>
+          <div class="glance__cell" role="listitem">
+            <p class="glance__label">Venue</p>
+            <p class="glance__value">GEMS Founders School</p>
+            <p class="glance__note">Al Barsha South, Dubai, UAE.</p>
+          </div>
+          <div class="glance__cell" role="listitem">
+            <p class="glance__label">Registration</p>
+            <p class="glance__value">Opening soon</p>
+            <p class="glance__note">Announcements via Instagram and email.</p>
+          </div>
+          <div class="glance__cell" role="listitem">
+            <p class="glance__label">Eligibility</p>
+            <p class="glance__value">Secondary students</p>
+            <p class="glance__note">Individual speakers and school delegations welcome.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         CLOSING
+         ================================ -->
+    <section class="closing section" aria-label="Closing statement">
+      <div class="container reveal">
+        <p class="eyebrow eyebrow--no-line" style="justify-content: center; width: 100%;">One more thing</p>
+        <p class="closing__statement">
+          Your argument lasts minutes.<br />
+          <span class="accent">Your impact can last far longer.</span>
+        </p>
+        <a class="btn btn--primary" href="contact.html">
+          <span>Start a conversation</span>
+          <svg class="btn__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
         </a>
       </div>
     </section>
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
+  <!-- ================================
+       FOOTER
+       ================================ -->
+  <footer class="footer" aria-label="Site footer">
     <div class="container">
-      <p class="footer-headline">let's argue<span class="accent-red">.</span></p>
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/logo.png" alt="GFS Legacy Debates crest" width="58" height="69" loading="lazy" />
-          <span class="footer-name">GFS Legacy Debates</span>
-          <p class="footer-line">arguments fade. ideas stick around.</p>
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="assets/logo.png" alt="GFS Legacy Debates crest" width="52" height="62" loading="lazy" />
+          <h3>Legacy Debates</h3>
+          <p>Arguments fade. Ideas leave a legacy.</p>
         </div>
-        <div class="footer-col">
-          <h3>navigate</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="team.html">Core Team</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+
+        <div>
+          <div class="footer__heading">Navigate</div>
+          <nav class="footer__links" aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="team.html">Core Team</a>
+            <a href="contact.html">Contact</a>
+          </nav>
         </div>
-        <div class="footer-col">
-          <h3>connect</h3>
-          <ul>
-            <!-- EDIT: replace with real handles and addresses -->
-            <li><a href="https://instagram.com/gfslegacydebates" rel="noopener" target="_blank">Instagram</a></li>
-            <li><a href="mailto:legacydebates@gemsfs.example.com">Email</a></li>
-            <li><a href="contact.html">Sponsorship</a></li>
-          </ul>
+
+        <div>
+          <div class="footer__heading">Connect</div>
+          <div class="footer__social">
+            <!-- EDIT: replace with official URLs -->
+            <a href="https://www.instagram.com/gfslegacydebates/" class="footer__social-link" aria-label="GFS Legacy Debates on Instagram" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="mailto:legacydebates@gemsfs.example.com" class="footer__social-link" aria-label="Email GFS Legacy Debates">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 7l9 6 9-6"/></svg>
+            </a>
+          </div>
+          <div class="footer__contact">
+            <span>GEMS Founders School, Al Barsha South</span>
+            <a href="mailto:legacydebates@gemsfs.example.com">legacydebates@gemsfs.example.com</a>
+          </div>
         </div>
       </div>
-      <div class="footer-base">
-        <span>&copy; <span data-year>2026</span> gfs legacy debates</span>
-        <span class="host">hosted by GEMS Founders School</span>
+
+      <div class="footer__bottom">
+        <p>&copy; <span data-year>2026</span> GFS Legacy Debates. All rights reserved.</p>
+        <p class="footer__host">Hosted by GEMS Founders School, Dubai</p>
       </div>
     </div>
   </footer>

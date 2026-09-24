@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
   <title>Contact — GFS Legacy Debates</title>
   <meta name="description" content="Start a conversation with GFS Legacy Debates — participation, collaboration, sponsorship, or event information." />
+  <meta name="theme-color" content="#090b10" />
 
-  <meta property="og:title" content="Contact — GFS Legacy Debates" />
+  <meta property="og:title" content="Contact | GFS Legacy Debates" />
   <meta property="og:description" content="Start a conversation with the team behind GFS Legacy Debates." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gfslegacydebates.example.com/contact.html" />
@@ -16,7 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animations.css" />
@@ -24,95 +26,96 @@
 </head>
 <body data-page="contact">
 
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <div class="intro" data-intro aria-hidden="true">
-    <div class="intro-inner">
-      <div class="intro-logo-mask">
-        <img src="assets/logo.png" alt="" width="170" height="201" />
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar" data-scroll-progress></div></div>
+
+  <header>
+    <nav class="nav" data-nav aria-label="Primary">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="GFS Legacy Debates, Home">
+          <img class="nav__logo-mark" src="assets/logo.png" alt="GFS Legacy Debates crest" width="38" height="45" />
+          <span class="nav__logo-text">
+            <span class="nav__logo-title">Legacy Debates</span>
+            <span class="nav__logo-sub">GEMS Founders School</span>
+          </span>
+        </a>
+
+        <div class="nav__links">
+          <a href="index.html" class="nav__link">Home</a>
+          <a href="about.html" class="nav__link">About</a>
+          <a href="team.html" class="nav__link">Core Team</a>
+          <a href="contact.html" class="nav__link nav__link--active" aria-current="page">Contact</a>
+        </div>
+
+        <a href="contact.html" class="btn btn--primary btn--small nav__cta">Register</a>
+
+        <button class="nav__toggle" data-menu-toggle type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="nav__toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
       </div>
-      <p class="intro-word" data-intro-word>GFS Legacy Debates</p>
-      <p class="intro-tag">gems founders school, dubai</p>
-    </div>
-  </div>
+    </nav>
 
-  <header class="site-header" data-header>
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="GFS Legacy Debates — home">
-        <img class="brand-mark" src="assets/logo.png" alt="GFS Legacy Debates crest" width="42" height="50" />
-        <span class="brand-word">
-          <span class="brand-name">GFS Legacy Debates</span>
-          <span class="brand-sub">gems founders school</span>
-        </span>
-      </a>
-
-      <nav class="site-nav" aria-label="Primary">
-        <ul>
-          <li><a class="nav-link" href="index.html">Home</a></li>
-          <li><a class="nav-link" href="about.html">About</a></li>
-          <li><a class="nav-link" href="team.html">Core Team</a></li>
-          <li><a class="nav-link is-active" href="contact.html" aria-current="page">Contact</a></li>
-        </ul>
-      </nav>
-
-      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
-        <span class="menu-toggle-label" aria-hidden="true">menu</span>
-        <span class="menu-toggle-lines" aria-hidden="true"><span></span><span></span></span>
-      </button>
+    <div class="mobile-menu" id="mobileMenu" data-mobile-menu hidden>
+      <div class="mobile-menu__backdrop" data-close-menu></div>
+      <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <nav class="mobile-menu__nav" aria-label="Mobile">
+          <a href="index.html" class="mobile-menu__link">Home</a>
+          <a href="about.html" class="mobile-menu__link">About</a>
+          <a href="team.html" class="mobile-menu__link">Core Team</a>
+          <a href="contact.html" class="mobile-menu__link mobile-menu__link--active" aria-current="page">Contact</a>
+        </nav>
+        <p class="mobile-menu__meta">GFS Legacy Debates<br />GEMS Founders School, Dubai</p>
+      </div>
     </div>
   </header>
 
-  <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-label="Mobile" hidden>
-    <ul>
-      <li><a class="mobile-menu-link" href="index.html"><span class="idx">01</span>Home</a></li>
-      <li><a class="mobile-menu-link" href="about.html"><span class="idx">02</span>About</a></li>
-      <li><a class="mobile-menu-link" href="team.html"><span class="idx">03</span>Core Team</a></li>
-      <li><a class="mobile-menu-link is-active" href="contact.html" aria-current="page"><span class="idx">04</span>Contact</a></li>
-    </ul>
-    <p class="mobile-menu-meta">gfs legacy debates — gems founders school, dubai</p>
-  </nav>
-
   <main id="main">
 
-    <!-- ================= PAGE HERO ================= -->
+    <!-- ================================
+         PAGE HERO
+         ================================ -->
     <section class="page-hero" aria-labelledby="contact-heading">
-      <div class="container">
-        <p class="kicker" data-hero="kicker">( contact )</p>
-        <h1 id="contact-heading" data-hero="h1">Start a <span class="accent">conversation</span></h1>
-        <p class="lede" data-hero="lede">
+      <div class="bg-glow" aria-hidden="true"></div>
+      <div class="container" style="position: relative;">
+        <p class="eyebrow" data-hero>Contact</p>
+        <h1 id="contact-heading" data-hero>Start a <span class="accent">conversation</span></h1>
+        <p class="lead" data-hero>
           Debaters open with a question. So do we — what can we help you with?
         </p>
       </div>
     </section>
 
-    <!-- ================= CONTACT ================= -->
-    <section class="section-pad" aria-label="Contact details and form">
+    <!-- ================================
+         CONTACT
+         ================================ -->
+    <section class="section" aria-label="Contact details and form">
       <div class="container contact-grid">
 
-        <div class="contact-aside">
-          <p class="kicker" data-reveal>( reach us )</p>
+        <div class="reveal">
+          <p class="eyebrow" style="margin-bottom: 20px;">Reach us</p>
 
           <!-- EDIT CONTACT DETAILS HERE -->
-          <dl class="channels" data-reveal="none">
-            <div class="channel" data-reveal>
-              <dt>email</dt>
+          <dl class="channels">
+            <div class="channel">
+              <dt>Email</dt>
               <dd><a href="mailto:legacydebates@gemsfs.example.com">legacydebates@gemsfs.example.com</a></dd>
             </div>
-            <div class="channel" data-reveal>
-              <dt>instagram</dt>
+            <div class="channel">
+              <dt>Instagram</dt>
               <dd><a href="https://instagram.com/gfslegacydebates" rel="noopener" target="_blank">@gfslegacydebates</a></dd>
             </div>
-            <div class="channel" data-reveal>
-              <dt>school</dt>
+            <div class="channel">
+              <dt>School</dt>
               <dd>GEMS Founders School</dd>
             </div>
-            <div class="channel" data-reveal>
-              <dt>location</dt>
+            <div class="channel">
+              <dt>Location</dt>
               <dd>Al Barsha South, Dubai, UAE</dd>
             </div>
           </dl>
 
-          <p class="contact-note" data-reveal>
+          <p class="contact-note">
             Enquiries about participation, collaboration, sponsorship or event
             information are all welcome. A member of the core team replies to
             every message — usually within a few school days.
@@ -126,43 +129,43 @@
           in js/main.js (see initContactForm) or point the action attribute at
           your endpoint.
         -->
-        <form class="contact-form" data-contact-form action="#" method="post" novalidate>
+        <form class="contact-form reveal" data-contact-form action="#" method="post" novalidate>
 
           <div class="field">
-            <label for="cf-name">name</label>
+            <label for="cf-name">Name</label>
             <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Your full name" required />
-            <span class="field-error" id="cf-name-error" role="status">please tell us your name.</span>
+            <span class="field__error" id="cf-name-error" role="status">Please tell us your name.</span>
           </div>
 
           <div class="field">
-            <label for="cf-email">email</label>
+            <label for="cf-email">Email</label>
             <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="you@school.com" required />
-            <span class="field-error" id="cf-email-error" role="status">please enter a valid email address.</span>
+            <span class="field__error" id="cf-email-error" role="status">Please enter a valid email address.</span>
           </div>
 
           <div class="field">
-            <label for="cf-school">school</label>
+            <label for="cf-school">School</label>
             <input type="text" id="cf-school" name="school" autocomplete="organization" placeholder="Your school or organisation" />
           </div>
 
           <div class="field">
-            <label for="cf-subject">subject</label>
-            <input type="text" id="cf-subject" name="subject" placeholder="participation, sponsorship…" required />
-            <span class="field-error" id="cf-subject-error" role="status">please add a short subject.</span>
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="subject" placeholder="Participation, sponsorship…" required />
+            <span class="field__error" id="cf-subject-error" role="status">Please add a short subject.</span>
           </div>
 
           <div class="field field--full">
-            <label for="cf-message">message</label>
+            <label for="cf-message">Message</label>
             <textarea id="cf-message" name="message" rows="5" placeholder="Make your case…" required></textarea>
-            <span class="field-error" id="cf-message-error" role="status">every good case needs a message.</span>
+            <span class="field__error" id="cf-message-error" role="status">Every good case needs a message.</span>
           </div>
 
           <div class="form-actions">
-            <button class="btn btn--solid" type="submit">
-              <span class="btn-label">send message</span>
-              <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            <button class="btn btn--primary" type="submit">
+              <span>Send message</span>
+              <svg class="btn__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
             </button>
-            <span class="form-hint">( we read everything. rebuttals included. )</span>
+            <span class="form-hint">We read everything. Rebuttals included.</span>
           </div>
 
           <div class="form-success" data-form-success hidden tabindex="-1">
@@ -171,7 +174,7 @@
               <path data-success-check d="M15 27l8 8 15 -17" />
             </svg>
             <h3>Point well made.</h3>
-            <p>Your message is in. A member of the core team will get back to you soon.</p>
+            <p>Your message is in. A member of the core team will respond soon.</p>
           </div>
 
         </form>
@@ -181,36 +184,45 @@
 
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer" aria-label="Site footer">
     <div class="container">
-      <p class="footer-headline">let's argue<span class="accent-red">.</span></p>
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/logo.png" alt="GFS Legacy Debates crest" width="58" height="69" loading="lazy" />
-          <span class="footer-name">GFS Legacy Debates</span>
-          <p class="footer-line">arguments fade. ideas stick around.</p>
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="assets/logo.png" alt="GFS Legacy Debates crest" width="52" height="62" loading="lazy" />
+          <h3>Legacy Debates</h3>
+          <p>Arguments fade. Ideas leave a legacy.</p>
         </div>
-        <div class="footer-col">
-          <h3>navigate</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="team.html">Core Team</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+
+        <div>
+          <div class="footer__heading">Navigate</div>
+          <nav class="footer__links" aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="team.html">Core Team</a>
+            <a href="contact.html">Contact</a>
+          </nav>
         </div>
-        <div class="footer-col">
-          <h3>connect</h3>
-          <ul>
-            <li><a href="https://instagram.com/gfslegacydebates" rel="noopener" target="_blank">Instagram</a></li>
-            <li><a href="mailto:legacydebates@gemsfs.example.com">Email</a></li>
-            <li><a href="contact.html">Sponsorship</a></li>
-          </ul>
+
+        <div>
+          <div class="footer__heading">Connect</div>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/gfslegacydebates/" class="footer__social-link" aria-label="GFS Legacy Debates on Instagram" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="mailto:legacydebates@gemsfs.example.com" class="footer__social-link" aria-label="Email GFS Legacy Debates">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 7l9 6 9-6"/></svg>
+            </a>
+          </div>
+          <div class="footer__contact">
+            <span>GEMS Founders School, Al Barsha South</span>
+            <a href="mailto:legacydebates@gemsfs.example.com">legacydebates@gemsfs.example.com</a>
+          </div>
         </div>
       </div>
-      <div class="footer-base">
-        <span>&copy; <span data-year>2026</span> gfs legacy debates</span>
-        <span class="host">hosted by GEMS Founders School</span>
+
+      <div class="footer__bottom">
+        <p>&copy; <span data-year>2026</span> GFS Legacy Debates. All rights reserved.</p>
+        <p class="footer__host">Hosted by GEMS Founders School, Dubai</p>
       </div>
     </div>
   </footer>

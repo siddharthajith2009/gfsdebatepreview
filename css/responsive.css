@@ -1,170 +1,181 @@
 /* ==========================================================================
    GFS LEGACY DEBATES — Responsive layout
-   Desktop-first overrides. Breakpoints: 64rem (tablet), 46rem (mobile).
+   Desktop-first overrides. Breakpoints: 1024px, 768px, 480px.
    ========================================================================== */
 
-/* ---------- Tablet ---------- */
-
-@media (max-width: 64rem) {
-  :root {
-    --header-h: 4.25rem;
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .site-nav {
+  .glance {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .glance__cell:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .glance__cell:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border-subtle);
+  }
+}
+
+@media (max-width: 900px) {
+  .nav__links,
+  .nav__cta {
     display: none;
   }
 
-  .menu-toggle {
+  .nav__toggle {
     display: inline-flex;
   }
 
-  .hero-content {
+  .grid-2,
+  .letter,
+  .contact-grid,
+  .chapter__grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-    align-content: center;
   }
 
-  .hero-crest {
-    display: none;
+  .letter__portrait {
+    max-width: 420px;
   }
 
-  .gist-grid,
-  .president-grid,
-  .facts-grid,
-  .chapter-grid,
-  .coordinator-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+  .about__media {
+    max-width: 420px;
+    aspect-ratio: 4 / 3;
   }
 
-  .president-portrait,
-  .coordinator-portrait {
-    max-width: 21rem;
+  .team-grid--lead {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .chapter-marker {
+  .chapter__marker {
     display: flex;
     align-items: baseline;
-    gap: 1rem;
+    gap: 14px;
   }
 
-  .chapter-label {
+  .chapter__label {
     margin-top: 0;
   }
 
-  .pillar-row {
-    grid-template-columns: 3rem minmax(0, 1fr) 2rem;
-  }
-
-  .pillar-desc {
-    grid-column: 2 / 3;
-    grid-row: 2;
-    margin-top: 0.35rem;
-  }
-
-  .pillar-cue {
-    grid-row: 1;
-    grid-column: 3;
-  }
-
-  .footer-grid {
+  .footer__inner {
     grid-template-columns: 1fr 1fr;
   }
 
-  .footer-brand {
+  .footer__brand {
     grid-column: 1 / -1;
   }
 }
 
-/* ---------- Mobile ---------- */
-
-@media (max-width: 46rem) {
+@media (max-width: 768px) {
   :root {
-    --section-y: clamp(3.25rem, 13vw, 4.5rem);
+    --gutter: 24px;
+    --nav-height: 66px;
   }
 
-  .brand-word {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav__logo-sub {
     display: none;
   }
 
-  .menu-toggle-label {
-    display: none;
+  .hero__title {
+    font-size: clamp(44px, 13.5vw, 72px);
   }
 
-  .hero {
-    min-height: 92svh;
-  }
-
-  .hero-title {
-    font-size: clamp(2.9rem, 15vw, 4.4rem);
-  }
-
-  .hero-actions .btn {
+  .hero__actions {
     width: 100%;
-    justify-content: space-between;
+    flex-direction: column;
   }
 
-  .marquee span {
-    font-size: 0.85rem;
+  .hero__actions .btn {
+    width: 100%;
   }
 
-  .section-title {
-    font-size: var(--step-3);
+  .hero__scroll {
+    display: none;
   }
 
-  .president-sig {
-    flex-wrap: wrap;
+  .pillar__row {
+    grid-template-columns: 40px minmax(0, 1fr);
   }
 
-  .pillar-name {
-    font-size: var(--step-2);
-  }
-
-  .fact {
-    grid-template-columns: 1fr;
-    gap: 0.3rem;
+  .pillar__desc {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 6px;
   }
 
   .team-grid,
   .team-grid--lead {
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 12.5rem), 1fr));
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .team-card__body {
+    padding: 12px 13px 14px;
+  }
+
+  .team-card__name {
+    font-size: 14.5px;
   }
 
   .contact-form {
     grid-template-columns: 1fr;
-    gap: 1.6rem;
   }
 
   .channel {
     grid-template-columns: 1fr;
-    gap: 0.25rem;
+    gap: 4px;
+    padding: 14px 18px;
   }
 
-  .footer-grid {
+  .footer__inner {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 28px;
   }
 
-  .footer-base {
+  .footer__bottom {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 6px;
+  }
+
+  .glance {
+    grid-template-columns: 1fr;
+  }
+
+  .glance__cell {
+    border-right: 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .glance__cell:last-child {
+    border-bottom: 0;
   }
 
   .believe-list li {
-    grid-template-columns: 2.1rem 1fr;
-    gap: 0.85rem;
+    grid-template-columns: 34px 1fr;
+    gap: 12px;
   }
 }
 
-/* Very small screens */
-
-@media (max-width: 22.5rem) {
-  .hero-title {
-    font-size: 2.5rem;
+@media (max-width: 480px) {
+  .team-grid,
+  .team-grid--lead {
+    grid-template-columns: 1fr;
   }
 
-  .mobile-menu-link {
-    font-size: 1.8rem;
+  .team-card__name {
+    font-size: 16px;
+  }
+
+  .mobile-menu__panel {
+    width: 100%;
+    border-left: 0;
   }
 }

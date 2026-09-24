@@ -1,7 +1,7 @@
 /* ==========================================================================
    GFS LEGACY DEBATES — main.js
-   Site behaviour: header, mobile menu, custom cursor, contact form, misc.
-   Animation choreography lives in js/animations.js.
+   Site behaviour: nav state, scroll progress, mobile menu, contact form.
+   Reveal/entrance choreography lives in js/animations.js.
    ========================================================================== */
 
 (function () {
@@ -11,27 +11,23 @@
   var hasAnime = typeof window.anime === "function";
   var motionOK = hasAnime && !prefersReducedMotion;
 
-  /* ---------- Header: solid background + hide on scroll down ---------- */
+  /* ---------- Nav scrolled state + scroll progress ---------- */
 
-  function initHeader() {
-    var header = document.querySelector("[data-header]");
-    if (!header) return;
-
-    var lastY = window.scrollY;
+  function initScrollUI() {
+    var nav = document.querySelector("[data-nav]");
+    var bar = document.querySelector("[data-scroll-progress]");
     var ticking = false;
 
     function update() {
       var y = window.scrollY;
-      header.classList.toggle("is-solid", y > 24);
 
-      // Hide when scrolling down past the hero, reveal on any upward scroll.
-      if (y > 320 && y > lastY + 4 && !document.body.classList.contains("menu-open")) {
-        header.classList.add("is-hidden");
-      } else if (y < lastY - 4 || y <= 320) {
-        header.classList.remove("is-hidden");
+      if (nav) nav.classList.toggle("nav--scrolled", y > 12);
+
+      if (bar) {
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.transform = "scaleX(" + (max > 0 ? Math.min(y / max, 1) : 0) + ")";
       }
 
-      lastY = y;
       ticking = false;
     }
 
@@ -42,6 +38,7 @@
       }
     }, { passive: true });
 
+    window.addEventListener("resize", update);
     update();
   }
 
@@ -52,87 +49,64 @@
     var menu = document.querySelector("[data-mobile-menu]");
     if (!toggle || !menu) return;
 
-    var links = menu.querySelectorAll(".mobile-menu-link");
-    var meta = menu.querySelector(".mobile-menu-meta");
+    var links = menu.querySelectorAll(".mobile-menu__link");
+    var backdrop = menu.querySelector("[data-close-menu]");
     var isOpen = false;
-    var animating = false;
 
     function open() {
-      if (animating || isOpen) return;
+      if (isOpen) return;
       isOpen = true;
       menu.hidden = false;
       toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close navigation menu");
       document.body.classList.add("menu-open");
 
-      // Force reflow so the visibility transition applies cleanly.
+      // Reflow so the CSS opacity/transform transitions run.
       void menu.offsetHeight;
       menu.classList.add("is-open");
 
       if (motionOK) {
-        animating = true;
-        window.anime.set(links, { translateY: 42, opacity: 0 });
-        if (meta) window.anime.set(meta, { opacity: 0 });
+        window.anime.set(links, { translateX: 18, opacity: 0 });
         window.anime({
           targets: links,
-          translateY: 0,
+          translateX: 0,
           opacity: 1,
-          duration: 650,
-          delay: window.anime.stagger(70, { start: 120 }),
-          easing: "easeOutQuint",
-          complete: function () { animating = false; }
+          duration: 450,
+          delay: window.anime.stagger(55, { start: 90 }),
+          easing: "easeOutCubic"
         });
-        if (meta) {
-          window.anime({
-            targets: meta,
-            opacity: 1,
-            duration: 500,
-            delay: 450,
-            easing: "linear"
-          });
-        }
       }
 
       if (links.length) links[0].focus();
     }
 
     function close(returnFocus) {
-      if (animating || !isOpen) return;
+      if (!isOpen) return;
       isOpen = false;
       toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open navigation menu");
       document.body.classList.remove("menu-open");
+      menu.classList.remove("is-open");
 
-      function finish() {
-        menu.classList.remove("is-open");
-        menu.hidden = true;
-        animating = false;
-        if (returnFocus) toggle.focus();
-      }
+      window.setTimeout(function () {
+        if (!isOpen) menu.hidden = true;
+      }, 300);
 
-      if (motionOK) {
-        animating = true;
-        window.anime({
-          targets: links,
-          translateY: -24,
-          opacity: 0,
-          duration: 320,
-          delay: window.anime.stagger(35),
-          easing: "easeInQuad",
-          complete: finish
-        });
-      } else {
-        finish();
-      }
+      if (returnFocus) toggle.focus();
     }
 
     toggle.addEventListener("click", function () {
       if (isOpen) { close(true); } else { open(); }
     });
 
+    if (backdrop) {
+      backdrop.addEventListener("click", function () { close(false); });
+    }
+
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && isOpen) close(true);
     });
 
-    // Close the menu when a link is chosen (same-page anchors etc.).
     links.forEach(function (link) {
       link.addEventListener("click", function () { close(false); });
     });
@@ -151,7 +125,7 @@
       if (!field) return;
       field.classList.toggle("is-invalid", !valid);
       input.setAttribute("aria-invalid", valid ? "false" : "true");
-      var error = field.querySelector(".field-error");
+      var error = field.querySelector(".field__error");
       if (error && error.id) {
         input.setAttribute("aria-describedby", error.id);
       }
@@ -198,7 +172,6 @@
         fetch("/api/contact", { method: "POST", body: new FormData(form) })
       */
 
-      // Hide the fields, show the success state.
       Array.prototype.forEach.call(form.children, function (child) {
         if (!child.hasAttribute("data-form-success")) child.style.display = "none";
       });
@@ -208,16 +181,10 @@
       if (motionOK) {
         var circle = success.querySelector("[data-success-circle]");
         var check = success.querySelector("[data-success-check]");
-        [circle, check].forEach(function (el) {
-          if (!el) return;
-          var len = el.getTotalLength();
-          el.style.strokeDasharray = len;
-          el.style.strokeDashoffset = len;
-        });
         window.anime.timeline({ easing: "easeOutCubic" })
-          .add({ targets: success, opacity: [0, 1], translateY: [16, 0], duration: 450 })
-          .add({ targets: circle, strokeDashoffset: [window.anime.setDashoffset, 0], duration: 700 }, "-=200")
-          .add({ targets: check, strokeDashoffset: [window.anime.setDashoffset, 0], duration: 450 }, "-=250");
+          .add({ targets: success, opacity: [0, 1], translateY: [10, 0], duration: 350 })
+          .add({ targets: circle, strokeDashoffset: [window.anime.setDashoffset, 0], duration: 600 }, "-=150")
+          .add({ targets: check, strokeDashoffset: [window.anime.setDashoffset, 0], duration: 400 }, "-=200");
       }
     });
   }
@@ -232,7 +199,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    initHeader();
+    initScrollUI();
     initMobileMenu();
     initContactForm();
     initYear();
