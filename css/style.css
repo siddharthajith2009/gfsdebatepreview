@@ -1194,6 +1194,10 @@ button {
   margin-inline: auto;
 }
 
+.team-grid + .team-grid {
+  margin-top: 22px;
+}
+
 /*
   Reusable team member component — boxy card.
   Duplicate this <article class="team-card"> block to add more people.
