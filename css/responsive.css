@@ -4,10 +4,6 @@
    ========================================================================== */
 
 @media (max-width: 1024px) {
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .glance {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -45,10 +41,6 @@
   .about__media {
     max-width: 420px;
     aspect-ratio: 4 / 3;
-  }
-
-  .team-grid--lead {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .chapter__marker {
@@ -111,10 +103,8 @@
     margin-top: 6px;
   }
 
-  .team-grid,
-  .team-grid--lead {
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
+  .team-card {
+    width: min(196px, 42vw);
   }
 
   .team-card__body {
@@ -165,11 +155,6 @@
 }
 
 @media (max-width: 480px) {
-  .team-grid,
-  .team-grid--lead {
-    grid-template-columns: 1fr;
-  }
-
   .team-card__name {
     font-size: 16px;
   }

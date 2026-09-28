@@ -30,7 +30,7 @@ Then open <http://localhost:41730>.
 ```
 index.html        Home (hero, about, pillars, president's letter, event info)
 about.html        About (chapters 01–04, philosophy, closing statement)
-team.html         Core Team (Debate Coordinator feature + student leadership)
+team.html         Core Team (student leadership, grouped by role)
 contact.html      Contact (channels + validated contact form)
 
 css/
@@ -45,7 +45,7 @@ js/
 
 assets/
   logo.png        The official GFS Legacy Debates crest
-  images/         Portrait placeholders — replace with real photography
+  images/         Team portraits
 ```
 
 ## Updating content
@@ -58,8 +58,6 @@ Everything editable is plain HTML with `<!-- EDIT -->` comments nearby:
   (date, venue, registration status, eligibility).
 - **President's letter** — the `letter` block in `index.html`: portrait,
   badge name/role, quote, message, and signature.
-- **Debate Coordinator** — the featured `letter` block at the top of
-  `team.html`.
 - **Team members** — each person on `team.html` is one
   `<article class="team-card">` block; duplicate a block to add someone and
   point its `<img>` at a photo in `assets/images/`.

@@ -852,6 +852,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
   transition: transform 800ms ease;
 }
 
@@ -1165,9 +1166,10 @@ button {
 .team-group__head {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   gap: 16px;
-  margin-bottom: clamp(22px, 4vw, 34px);
+  margin-bottom: clamp(18px, 3vw, 26px);
 }
 
 .team-group__head h2 {
@@ -1182,15 +1184,14 @@ button {
   color: var(--faint);
 }
 
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
+.team-grid,
 .team-grid--lead {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px 18px;
+  max-width: 900px;
+  margin-inline: auto;
 }
 
 /*
@@ -1198,9 +1199,11 @@ button {
   Duplicate this <article class="team-card"> block to add more people.
 */
 .team-card {
+  width: 196px;
   border: 1px solid var(--border-subtle);
   background: var(--surface);
   overflow: hidden;
+  text-align: center;
   transition: border-color var(--transition-standard), transform var(--transition-standard);
 }
 
@@ -1220,6 +1223,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 16%;
   transition: transform 700ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -1229,25 +1233,28 @@ button {
 }
 
 .team-card__body {
-  padding: 16px 18px 18px;
+  padding: 12px 10px 14px;
 }
 
 .team-card__name {
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  line-height: 1.15;
+  line-height: 1.2;
+  min-height: 2.4em;
 }
 
 .team-card__role {
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--red);
   margin-top: 6px;
+  min-height: 2.4em;
+  line-height: 1.35;
 }
 
 .team-card__line {
