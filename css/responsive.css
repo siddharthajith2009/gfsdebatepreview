@@ -104,7 +104,7 @@
   }
 
   .team-card {
-    width: min(196px, 42vw);
+    width: min(320px, 78vw);
   }
 
   .team-card__body {
